@@ -17,18 +17,18 @@
         <main>
             <p id="questionGame"></p>
         </main>
-        <footer>
-            <h4>List of questions to ask:</h4>
-            <p>Do you like listening to the music?</p>
-            <p>What music do you listen to?</p>
-            <p>Then what do you usually do in your free time? </p>
-        </footer>
-        <script>
+        <footer id="questions">
             
-            // getting current system time. I found this concept in some tutorial a few month ago, don't remember where exactly it was
+        
+        </footer>
+        <script>            
+            // getting current system time
+                //***I found this concept in some tutorial a few month ago, don't remember where exactly it was***
             var today = new Date();
             var hourNow = today.getHours();
             var greeting;
+            var favoriteThing;
+            var questionAskedEl;
             console.log('Current time is ' + hourNow);
             //changing greeting depending on current time
             if (hourNow > 18) {
@@ -43,11 +43,26 @@
             var userName = prompt(greeting + ', what is your name?');
             console.log('The user name is ' + userName);
             var questionGameEl = document.getElementById('questionGame');
-            questionGameEl.innerHTML ='<p>'+ greeting + ', ' + userName + ', do you want to play a question game?  <button onclick="questionGameFunction()">YES</button></p>';
-
+            questionGameEl.innerHTML ='<p>'+ greeting + ', ' + userName + ', do you want to play a question game?  <button onclick="questionGameFunction()">YES</button></p>';            
             var questionGameFunction = function() {
-                alert('Hi there!')
-            }
+                var likesMusic = prompt(userName + ', do you like listening to the music?');
+                //allow only yes or no answers for this question
+                while (!(likesMusic.toLowerCase() === 'yes' ||  likesMusic.toLowerCase() === 'no')) {
+                    likesMusic = prompt('I\'m sorry, ' + userName + ', I didn\'t quite get your answer. Please try again using only "yes" and "no" answers');
+                }
+                if (likesMusic.toLowerCase() === 'yes'){
+                    var favoriteGenre = prompt('Awesome, ' + userName + ', I love music, too. What\'s your favorite genre?');
+                    favoriteThing = prompt('Nice, ' + userName + ', I think that ' + favoriteGenre + ' is really cool genre! By the way, what\'s your favorite thing in the world besides listening to the music?');
+                    alert('This is just awesome! Indeed, ' + favoriteThing + ' might be even better than music sometimes!');
+                    questionAskedEl = document.getElementById('questions');
+                    questionAskedEl.innerHTML = '<h4>List of the questions:</h4> <p>Do you like music? - Yes</p> <p>Your favorite genre - ' + favoriteGenre + '</p> <p>Your favorite thing in the world - ' + favoriteThing + '</p>'
+                } else {
+                    favoriteThing = prompt('Oh, I see, ' + userName + '. What do you like to do then?');  
+                    alert('Yes, actually you\'re right, '+ userName + ', ' + favoriteThing + ' might be even better than music sometimes!');   
+                    questionAskedEl = document.getElementById('questions');
+                    questionAskedEl.innerHTML = '<h4>List of the questions:</h4><p>Do you like music? - No</p> <p>Your favorite thing in the world - ' + favoriteThing + '</p>'        
+                } 
+            }  
 
         </script>
     </body>

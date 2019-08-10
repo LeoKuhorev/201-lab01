@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Class 1 Lab
+        </title>
+        <style>
+            html {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>  
+        <header>
+            <h1>Class 1 Lab</h1>
+        </header>
+        <main>
+            <p id="questionGame"></p>
+        </main>
+        <footer>
+            <h4>List of questions to ask:</h4>
+            <p>Do you like listening to the music?</p>
+            <p>What music do you listen to?</p>
+            <p>Then what do you usually do in your free time? </p>
+        </footer>
+        <script>
+            
+            // getting current system time. I found this concept in some tutorial a few month ago, don't remember where exactly it was
+            var today = new Date();
+            var hourNow = today.getHours();
+            var greeting;
+            console.log('Current time is ' + hourNow);
+            //changing greeting depending on current time
+            if (hourNow > 18) {
+            greeting = 'Good evening';
+            }   else if (hourNow > 12) {
+            greeting = 'Good afternoon';
+            }   else if (hourNow > 0) {
+            greeting = ' Good morning';
+            }   else {
+            greeting = 'Welcome';
+            }
+            var userName = prompt(greeting + ', what is your name?');
+            console.log('The user name is ' + userName);
+            var questionGameEl = document.getElementById('questionGame');
+            questionGameEl.innerHTML ='<p>'+ greeting + ', ' + userName + ', do you want to play a question game?  <button onclick="questionGameFunction()">YES</button></p>';
+
+            var questionGameFunction = function() {
+                alert('Hi there!')
+            }
+
+        </script>
+    </body>
+</html>

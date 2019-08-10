@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>
             Class 1 Lab
@@ -7,6 +7,11 @@
         <style>
             html {
                 text-align: center;
+                background-color: cornsilk;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .red {
+                color: red;
             }
         </style>
     </head>
@@ -55,12 +60,12 @@
                     favoriteThing = prompt('Nice, ' + userName + ', I think that ' + favoriteGenre + ' is really cool genre! By the way, what\'s your favorite thing in the world besides listening to the music?');
                     alert('This is just awesome! Indeed, ' + favoriteThing + ' might be even better than music sometimes!');
                     questionAskedEl = document.getElementById('questions');
-                    questionAskedEl.innerHTML = '<h4>List of the questions:</h4> <p>Do you like music? - Yes</p> <p>Your favorite genre - ' + favoriteGenre + '</p> <p>Your favorite thing in the world - ' + favoriteThing + '</p>'
+                    questionAskedEl.innerHTML = '<h4>List of the questions:</h4> <p>Do you like music? - <span class="red">Yes</span></p> <p>Your favorite genre - ' + '<span class="red">' + favoriteGenre + '</span></p> <p>Your favorite thing in the world - ' + '<span class="red">'+ favoriteThing + '</span></p>';
                 } else {
                     favoriteThing = prompt('Oh, I see, ' + userName + '. What do you like to do then?');  
                     alert('Yes, actually you\'re right, '+ userName + ', ' + favoriteThing + ' might be even better than music sometimes!');   
                     questionAskedEl = document.getElementById('questions');
-                    questionAskedEl.innerHTML = '<h4>List of the questions:</h4><p>Do you like music? - No</p> <p>Your favorite thing in the world - ' + favoriteThing + '</p>'        
+                    questionAskedEl.innerHTML = '<h4>List of the questions:</h4><p>Do you like music? - No</p> <p>Your favorite thing in the world - ' + favoriteThing + '</p>';        
                 } 
             }  
 

@@ -114,12 +114,14 @@
                     favoriteThing = prompt('Nice, ' + userName + ', I think that ' + favoriteGenre + ' is really cool genre! By the way, what\'s your favorite thing in the world besides listening to the music?');
                     alert('This is just awesome! Indeed, ' + favoriteThing + ' might be even better than music sometimes!');
                     questionAskedEl = document.getElementById('questions');
-                    questionAskedEl.innerHTML = '<table><tr><th>Question asked</th><th>Your answer</th></tr> <tr><td>Do you like music?</td><td>Yes</td></tr><tr><td>Your favorite genre</td><td>'+ favoriteGenre + '</td></tr><tr><td>Your favorite thing in the world</td><td>'+ favoriteThing + '</td></tr>'
+                    questionAskedEl.innerHTML = '<table><tr><th>Question asked</th><th>Your answer</th></tr> <tr><td>Do you like music?</td><td>Yes</td></tr><tr><td>Your favorite genre</td><td>'+ favoriteGenre + '</td></tr><tr><td>Your favorite thing in the world</td><td>'+ favoriteThing + '</td></tr>';
+                    questionGameEl.innerHTML ='<p>' + userName + ', do you want to play again?  <button class = "button" onclick="questionGameFunction()">YES</button></p>'; 
                 } else {
                     favoriteThing = prompt('Oh, I see, ' + userName + '. What do you like to do then?');  
                     alert('Yes, actually you\'re right, '+ userName + ', ' + favoriteThing + ' might be even better than music sometimes!');   
                     questionAskedEl = document.getElementById('questions');
-                    questionAskedEl.innerHTML = '<table><tr><th>Question asked</th><th>Your answer</th></tr> <tr><td>Do you like music?</td><td>No</td></tr><tr><td>Your favorite thing in the world</td><td>'+ favoriteThing + '</td></tr>'      
+                    questionAskedEl.innerHTML = '<table><tr><th>Question asked</th><th>Your answer</th></tr> <tr><td>Do you like music?</td><td>No</td></tr><tr><td>Your favorite thing in the world</td><td>'+ favoriteThing + '</td></tr>';   
+                    questionGameEl.innerHTML ='<p>' + userName + ', do you want to play again?  <button class = "button" onclick="questionGameFunction()">YES</button></p>';  
                 } 
             }  
 

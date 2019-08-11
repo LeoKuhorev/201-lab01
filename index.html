@@ -6,12 +6,66 @@
         </title>
         <style>
             html {
+                background-color: #E0F1FF; 
+                color: #305A80;
                 text-align: center;
-                background-color: cornsilk;
                 font-family: Arial, Helvetica, sans-serif;
             }
-            .red {
-                color: red;
+            header{
+                overflow: hidden;
+                background-color: #305A80;
+                color: #E0F1FF;
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+            }
+            main{
+                position: fixed;   
+                left: 0; 
+                top: 15%;  
+                width: 100%;
+                font-size: 30px;   
+                text-align: center;
+            }
+            .button {
+                background-color: #E0F1FF;
+                color: #305A80;
+                padding: 8px 12px;
+                border-radius: 12px;
+                text-align: center;
+                display: inline-block;
+                font-size: 25px;
+                border: 2px solid #305A80;
+                }
+            .button:hover{
+                background-color: #305A80;
+                color: #E0F1FF;
+            }
+            .answer {
+                color: #305A80;
+            }
+            footer{
+                background-color: #707880;
+                color: #E0F1FF;
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                font-size: 25px;
+                text-align: center;
+            }
+            table{
+                width: 60%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 2%;
+            }
+            th {
+                padding-bottom: 15px;
+            }        
+            tr:hover {
+                background-color:#879099;
             }
         </style>
     </head>
@@ -48,7 +102,7 @@
             var userName = prompt(greeting + ', what is your name?');
             console.log('The user name is ' + userName);
             var questionGameEl = document.getElementById('questionGame');
-            questionGameEl.innerHTML ='<p>'+ greeting + ', ' + userName + ', do you want to play a question game?  <button onclick="questionGameFunction()">YES</button></p>';            
+            questionGameEl.innerHTML ='<p>'+ greeting + ' ' + userName + ', do you want to play a question game?  <button class = "button" onclick="questionGameFunction()">YES</button></p>';            
             var questionGameFunction = function() {
                 var likesMusic = prompt(userName + ', do you like listening to the music?');
                 //allow only yes or no answers for this question
@@ -60,12 +114,12 @@
                     favoriteThing = prompt('Nice, ' + userName + ', I think that ' + favoriteGenre + ' is really cool genre! By the way, what\'s your favorite thing in the world besides listening to the music?');
                     alert('This is just awesome! Indeed, ' + favoriteThing + ' might be even better than music sometimes!');
                     questionAskedEl = document.getElementById('questions');
-                    questionAskedEl.innerHTML = '<h4>List of the questions:</h4> <p>Do you like music? - <span class="red">Yes</span></p> <p>Your favorite genre - ' + '<span class="red">' + favoriteGenre + '</span></p> <p>Your favorite thing in the world - ' + '<span class="red">'+ favoriteThing + '</span></p>';
+                    questionAskedEl.innerHTML = '<table><tr><th>Question asked</th><th>Your answer</th></tr> <tr><td>Do you like music?</td><td>Yes</td></tr><tr><td>Your favorite genre</td><td>'+ favoriteGenre + '</td></tr><tr><td>Your favorite thing in the world</td><td>'+ favoriteThing + '</td></tr>'
                 } else {
                     favoriteThing = prompt('Oh, I see, ' + userName + '. What do you like to do then?');  
                     alert('Yes, actually you\'re right, '+ userName + ', ' + favoriteThing + ' might be even better than music sometimes!');   
                     questionAskedEl = document.getElementById('questions');
-                    questionAskedEl.innerHTML = '<h4>List of the questions:</h4><p>Do you like music? - No</p> <p>Your favorite thing in the world - ' + favoriteThing + '</p>';        
+                    questionAskedEl.innerHTML = '<table><tr><th>Question asked</th><th>Your answer</th></tr> <tr><td>Do you like music?</td><td>No</td></tr><tr><td>Your favorite thing in the world</td><td>'+ favoriteThing + '</td></tr>'      
                 } 
             }  
 

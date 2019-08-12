@@ -80,24 +80,24 @@
             
         
         </footer>
-        <script>            
-            // getting current system time
-                //***I found this concept in some tutorial a few month ago, don't remember where exactly it was***
-            var today = new Date();
-            var hourNow = today.getHours();
-            var greeting;
+        <script>
             var favoriteThing;
-            var questionAskedEl;
+            var questionAskedEl;           
+            // getting current system time
+            //     ***I found this concept in some tutorial a few month ago, don't remember where exactly it was***
+            var today = new Date();
+            var hourNow = today.getHours();            
+            var greeting;            
             console.log('Current time is ' + hourNow);
             //changing greeting depending on current time
             if (hourNow > 18) {
-            greeting = 'Good evening';
+                greeting = 'Good evening';
             }   else if (hourNow > 12) {
-            greeting = 'Good afternoon';
+                greeting = 'Good afternoon';
             }   else if (hourNow > 0) {
-            greeting = ' Good morning';
+                greeting = ' Good morning';
             }   else {
-            greeting = 'Welcome';
+                greeting = 'Welcome';
             }
             var userName = prompt(greeting + ', what is your name?');
             //if name is not entered call them 'guest'
